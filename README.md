@@ -4,6 +4,8 @@ Machine  Learning on the fly.
 
 MLfly is a dockerized web app made using Django and powered by Nginx and uWSGI. 
 
+Chech out the deployed version at [this site.](https://mlfly.azurewebsites.net/)
+
 ## Usage
 
 To use, make sure you have docker-compose installed and then run the instruction
@@ -14,7 +16,7 @@ To use, make sure you have docker-compose installed and then run the instruction
 ## TODO
 
 - [ ] Add regression models
-- [ ] Deployment
+- [x] Deployment
 - [ ] Deeplearning models
 - [ ] React frontend
 - [ ] Styling
