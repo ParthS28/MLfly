@@ -40,7 +40,6 @@ from django.views import View
 from django.db.models import Count
 from django.shortcuts import redirect
 
-from portal.models import Subscribe
 from django.http import Http404, JsonResponse, HttpResponse, HttpResponseRedirect, HttpResponseServerError
 from django.db.models import Q
  
@@ -67,6 +66,7 @@ def result(request):
     df = pd.DataFrame()
     if request.method == 'POST':
         csv = request.FILES['csv_file']
+        print(csv)
         df = pd.read_csv(csv)
         with open('data.csv', 'wb+') as destination:
             for chunk in csv.chunks():
@@ -108,10 +108,11 @@ def algo_result(request):
     df = pd.DataFrame()
     if request.method == 'POST':
         csv = request.FILES['csv_file']
+        # print(csv)
         df = pd.read_csv(csv)
-        with open('data.csv', 'wb+') as destination:
-            for chunk in csv.chunks():
-                destination.write(chunk)
+        # with open('data.csv', 'wb+') as destination:
+        #     for chunk in csv.chunks():
+        #         destination.write(chunk)
 
         df_target = df
         lon = len(list(df.head(0)))
